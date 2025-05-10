@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Agendamento de Consulta</title>
+    <link rel="stylesheet" href="agendamento.css" />
+</head>
+<body>
+
+    <header class="cabecalho">
+        <h1 class="titulo">Agenda dos Alunos</h1>
+        <nav>
+            <ul>
+                <li class="dropdown">
+                    Menu
+                    <div class="dropdown_menu">
+                        <a href="cadastro_paciente.html"><button>Cadastro de Pacientes</button></a>
+                        <a href="cadastro_alunos.html"><button>Cadastro de Alunos</button></a>
+                        <a href="cadastro_docentes.html"><button>Cadastro de Docentes</button></a>
+                        <button class="botao-sair" onclick="window.location.href='/login/login.html'">Sair</button>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <script src="agendamento.js" defer></script>
+
+    <!-- Script para ativar o menu por clique -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const dropdown = document.querySelector(".dropdown");
+            const menu = document.querySelector(".dropdown_menu");
+
+            dropdown.addEventListener("click", function (event) {
+                event.stopPropagation();
+                menu.style.display = (menu.style.display === "block") ? "none" : "block";
+            });
+
+            document.addEventListener("click", function () {
+                menu.style.display = "none";
+            });
+        });
+    </script>
+
+</body>
+</html>
+
